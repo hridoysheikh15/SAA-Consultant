@@ -399,7 +399,7 @@ ul {
   font-size: 0.77rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  padding: 9px 22px !important;
+  padding: 9px 9px !important;
   background: var(--color-accent);
   color: var(--color-primary) !important;
   border-radius: var(--radius);
