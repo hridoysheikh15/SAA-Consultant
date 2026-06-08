@@ -3079,3 +3079,275 @@ h4 {
     font-size: 30px;
   }
 }
+
+/* ============================================================
+   MM2H PAGE — TIER CARDS & TABLES (client feedback update)
+   ============================================================ */
+.info-table {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.info-table thead {
+  background: var(--color-primary);
+}
+
+.info-table thead th {
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.81rem;
+  font-weight: 700;
+  padding: 15px 18px;
+  border: none;
+  letter-spacing: 0.03em;
+}
+
+.info-table tbody td {
+  padding: 13px 18px;
+  font-size: 0.87rem;
+  border-color: var(--border-light);
+  vertical-align: middle;
+}
+
+.info-table tbody tr:hover {
+  background: var(--color-bg-main);
+}
+.info-table .highlight-val {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.93rem;
+}
+.info-table .tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 0.83rem;
+}
+.tier-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-silver {
+  background: #9ca3af;
+}
+.dot-gold {
+  background: var(--color-accent);
+}
+.dot-plat {
+  background: var(--color-primary);
+}
+.tier-silver {
+  color: #6b7280;
+}
+.tier-gold {
+  color: #b45309;
+}
+.tier-plat {
+  color: var(--color-primary);
+}
+
+/* Info summary cards */
+.info-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  border: 1px solid var(--border);
+  height: 100%;
+  transition: var(--transition);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card .ic-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(11, 31, 58, 0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.info-card .ic-icon i {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+.info-card .ic-value {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.info-card .ic-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-body);
+  letter-spacing: 0.04em;
+}
+.info-card .ic-sub {
+  font-size: 0.72rem;
+  color: var(--color-text-body);
+  margin-top: 5px;
+}
+
+/* Tier comparison cards */
+.tier-card {
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  border: 2px solid var(--border);
+  height: 100%;
+  transition: var(--transition);
+  position: relative;
+}
+
+.tier-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.tier-card.popular {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.16);
+}
+
+.tier-card .popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 13px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.tier-card .tier-name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 3px;
+}
+
+.tier-card .tier-age {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.tier-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.84rem;
+}
+
+.tier-row:last-of-type {
+  border-bottom: none;
+}
+.tier-row .tr-label {
+  color: var(--color-text-body);
+}
+.tier-row .tr-val {
+  font-weight: 700;
+  color: var(--color-text-heading);
+  text-align: right;
+}
+
+/* Mini step list (inside navy section) */
+.mini-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mini-step:last-child {
+  border-bottom: none;
+}
+
+.mini-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mini-step h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.mini-step p {
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+/* Why-Malaysia lifestyle destination card images */
+.icon-card img {
+  border-radius: 0;
+}
+
+/* Founder profile responsive */
+@media (max-width: 767px) {
+  .tier-card {
+    margin-bottom: 8px;
+  }
+  .info-table {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 575px) {
+  .tier-card {
+    padding: 24px 18px;
+  }
+  .info-card {
+    padding: 20px 16px;
+  }
+}

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Malaysia My Second Home (MM2H) Programme — Benefits, eligibility, categories and requirements. Apply with M-Hexad Solution." />
+    content="Malaysia My Second Home (MM2H) Programme — Full guide to financial requirements, age categories, fixed deposit, offshore income, visa validity, dependents and application process." />
   <title>MM2H Program | M-Hexad Solution</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
@@ -14,6 +14,264 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@1,400&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ── MM2H-page specific styles ── */
+    .info-table {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .info-table thead {
+      background: var(--color-primary);
+    }
+
+    .info-table thead th {
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 16px 20px;
+      border: none;
+      letter-spacing: 0.03em;
+    }
+
+    .info-table tbody td {
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      border-color: var(--border-light);
+      vertical-align: middle;
+    }
+
+    .info-table tbody tr:hover {
+      background: var(--color-bg-main);
+    }
+
+    .info-table .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .tier-silver {
+      color: #6b7280;
+    }
+
+    .tier-gold {
+      color: #b45309;
+    }
+
+    .tier-plat {
+      color: var(--color-primary);
+    }
+
+    .tier-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-silver {
+      background: #9ca3af;
+    }
+
+    .dot-gold {
+      background: var(--color-accent);
+    }
+
+    .dot-plat {
+      background: var(--color-primary);
+    }
+
+    .highlight-val {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.95rem;
+    }
+
+    /* Infographic cards */
+    .info-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      height: 100%;
+      transition: var(--transition);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--color-accent);
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .info-card .ic-icon {
+      width: 58px;
+      height: 58px;
+      background: rgba(11, 31, 58, 0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .info-card .ic-icon i {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+    }
+
+    .info-card .ic-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .info-card .ic-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-body);
+      letter-spacing: 0.04em;
+    }
+
+    .info-card .ic-sub {
+      font-size: 0.75rem;
+      color: var(--color-text-body);
+      margin-top: 6px;
+    }
+
+    /* Tier comparison cards */
+    .tier-card {
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      border: 2px solid var(--border);
+      height: 100%;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .tier-card.popular {
+      border-color: var(--color-accent);
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.18);
+    }
+
+    .tier-card .popular-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-accent);
+      color: var(--color-primary);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .tier-card .tier-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .tier-card .tier-age {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .tier-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.85rem;
+    }
+
+    .tier-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .tier-row .tr-label {
+      color: var(--color-text-body);
+    }
+
+    .tier-row .tr-val {
+      font-weight: 700;
+      color: var(--color-text-heading);
+      text-align: right;
+    }
+
+    /* Step mini timeline inside page */
+    .mini-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .mini-step:last-child {
+      border-bottom: none;
+    }
+
+    .mini-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-accent);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .mini-step h6 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: var(--color-text-heading);
+    }
+
+    .mini-step p {
+      font-size: 0.8rem;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -35,7 +293,7 @@
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Book Consultation</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Book Free Consultation</a></li>
         </ul>
       </div>
     </div>
@@ -45,9 +303,10 @@
     <div class="page-hero-ornament"></div>
     <div class="container">
       <div data-aos="fade-up">
-        <h1 class="page-hero-title">Malaysia My<br /><span>Second Home</span></h1>
-        <p style="color:rgba(255,255,255,0.7);margin-bottom:16px;max-width:560px;">A long-term residency programme by
-          the Malaysian Government for eligible foreign nationals.</p>
+        <h1 class="page-hero-title">Malaysia My<br /><span>Second Home (MM2H)</span></h1>
+        <p style="color:rgba(255,255,255,0.7);margin-bottom:16px;max-width:620px;">A comprehensive guide to the
+          Malaysian Government's long-term residency programme — requirements, financial criteria, visa validity and
+          more.</p>
         <nav class="breadcrumb-wrap">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -58,44 +317,516 @@
     </div>
   </section>
 
-  <!-- PROGRAM OVERVIEW -->
+  <!-- ── PROGRAMME OVERVIEW ── -->
   <section class="section-pad bg-white">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6" data-aos="fade-right">
-          <span class="section-label">Program Overview</span>
+          <span class="section-label">Programme overview</span>
           <h2 class="section-title">What is<br /><span>MM2H?</span></h2>
           <div class="section-divider"></div>
-          <p class="mb-3">The Malaysia My Second Home (MM2H) Programme is a long-term residency programme introduced by
-            the Malaysian Government to allow eligible foreign nationals to stay in Malaysia with a renewable
-            multiple-entry social visit pass.</p>
-          <p class="mb-4">Malaysia offers a high quality of life, affordable living costs, excellent healthcare,
-            international schools, and a peaceful multicultural environment that makes it attractive for retirees,
-            families, investors, and digital entrepreneurs.</p>
+          <p class="mb-3">The <strong>Malaysia My Second Home (MM2H)</strong> Programme is a long-term residency
+            initiative by the Malaysian Government that allows eligible foreign nationals to live in Malaysia on a
+            renewable multiple-entry social visit pass.</p>
+          <p class="mb-4">Restructured in 2021 and refined further, MM2H now operates under three distinct tiers —
+            <strong>Silver, Gold and Platinum</strong> — each designed to accommodate different age groups and financial
+            profiles.</p>
           <div class="d-flex gap-3 flex-wrap">
-            <a href="contact.html" class="btn-primary-custom"><i class="fa fa-file-alt me-1"></i> Apply for MM2H</a>
-            <a href="contact.html" class="btn-dark-custom"><i class="fa fa-calendar-check me-1"></i> Book
+            <a href="contact.html" class="btn-primary-custom"><i class="fa fa-clipboard-check me-1"></i> Check My MM2H
+              Eligibility</a>
+            <a href="contact.html" class="btn-dark-custom"><i class="fa fa-calendar-check me-1"></i> Book Free
               Consultation</a>
           </div>
         </div>
         <div class="col-lg-6" data-aos="fade-left">
-          <img src="https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?w=800&q=85" alt="Malaysia City"
-            style="border-radius:12px;width:100%;height:400px;object-fit:cover;box-shadow:0 20px 60px rgba(11,31,58,0.14);" />
+          <!-- Key Facts Infographic -->
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="info-card">
+                <div class="ic-icon"><i class="fa fa-passport"></i></div>
+                <div class="ic-value">5 Years</div>
+                <div class="ic-label">Visa Validity</div>
+                <div class="ic-sub">Renewable upon compliance</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="info-card">
+                <div class="ic-icon"><i class="fa fa-layer-group"></i></div>
+                <div class="ic-value">3 Tiers</div>
+                <div class="ic-label">Age Categories</div>
+                <div class="ic-sub">Silver · Gold · Platinum</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="info-card">
+                <div class="ic-icon"><i class="fa fa-users"></i></div>
+                <div class="ic-value">Family</div>
+                <div class="ic-label">Dependants Included</div>
+                <div class="ic-sub">Spouse + children + helper</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="info-card">
+                <div class="ic-icon"><i class="fa fa-globe-asia"></i></div>
+                <div class="ic-value">All</div>
+                <div class="ic-label">Nationalities Welcome</div>
+                <div class="ic-sub">Open to all countries</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS -->
-  <section id="benefits" class="section-pad bg-cream">
+  <!-- ── AGE CATEGORIES & TIER COMPARISON ── -->
+  <section id="eligibility" class="section-pad bg-cream">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7" data-aos="fade-up">
+          <span class="section-label">Three-tier structure</span>
+          <h2 class="section-title">MM2H Age Categories<br />& <span>Tier Comparison</span></h2>
+          <div class="section-divider center"></div>
+          <p class="section-desc mx-auto">Choose the tier that matches your age and financial profile. Each tier comes
+            with specific requirements and privileges.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <!-- Silver -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="tier-card" style="background:#fff;">
+            <div class="tier-name">Silver</div>
+            <span class="tier-age"><i class="fa fa-user me-1"></i> Below 35 Years Old</span>
+            <div class="tier-row"><span class="tr-label">Liquid Assets</span><span class="tr-val">RM 500,000</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Fixed Deposit</span><span class="tr-val">RM 150,000</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Offshore Income</span><span class="tr-val">RM
+                40,000/month</span></div>
+            <div class="tier-row"><span class="tr-label">Visa Duration</span><span class="tr-val">5 Years</span></div>
+            <div class="tier-row"><span class="tr-label">Renewable</span><span class="tr-val">Yes</span></div>
+            <div class="tier-row"><span class="tr-label">Part-time Work</span><span class="tr-val">Not permitted</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Ideal for</span><span class="tr-val">Digital
+                professionals</span></div>
+            <a href="contact.html" class="btn-dark-custom w-100 mt-4" style="justify-content:center;">Get Assessment</a>
+          </div>
+        </div>
+        <!-- Gold -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+          <div class="tier-card popular" style="background:#fff;">
+            <div class="popular-badge">Most Popular</div>
+            <div class="tier-name" style="color:var(--color-accent);">Gold</div>
+            <span class="tier-age"><i class="fa fa-user me-1"></i> 35 – 49 Years Old</span>
+            <div class="tier-row"><span class="tr-label">Liquid Assets</span><span class="tr-val">RM 750,000</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Fixed Deposit</span><span class="tr-val">RM 250,000</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Offshore Income</span><span class="tr-val">RM
+                40,000/month</span></div>
+            <div class="tier-row"><span class="tr-label">Visa Duration</span><span class="tr-val">5 Years</span></div>
+            <div class="tier-row"><span class="tr-label">Renewable</span><span class="tr-val">Yes</span></div>
+            <div class="tier-row"><span class="tr-label">Part-time Work</span><span class="tr-val">Not permitted</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Ideal for</span><span class="tr-val">Families relocating</span>
+            </div>
+            <a href="contact.html" class="btn-primary-custom w-100 mt-4" style="justify-content:center;">Check
+              Eligibility</a>
+          </div>
+        </div>
+        <!-- Platinum -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+          <div class="tier-card" style="background:#fff;">
+            <div class="tier-name">Platinum</div>
+            <span class="tier-age"><i class="fa fa-user me-1"></i> 50 Years & Above</span>
+            <div class="tier-row"><span class="tr-label">Liquid Assets</span><span class="tr-val">RM 1,000,000</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Fixed Deposit</span><span class="tr-val">RM 150,000</span>
+            </div>
+            <div class="tier-row"><span class="tr-label">Offshore Income</span><span class="tr-val">RM
+                40,000/month</span></div>
+            <div class="tier-row"><span class="tr-label">Visa Duration</span><span class="tr-val">5 Years</span></div>
+            <div class="tier-row"><span class="tr-label">Renewable</span><span class="tr-val">Yes</span></div>
+            <div class="tier-row"><span class="tr-label">Part-time Work</span><span class="tr-val">Up to 20
+                hrs/week*</span></div>
+            <div class="tier-row"><span class="tr-label">Ideal for</span><span class="tr-val">Retirees & HNWIs</span>
+            </div>
+            <a href="contact.html" class="btn-dark-custom w-100 mt-4" style="justify-content:center;">Get Assessment</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.76rem;color:var(--color-text-body);text-align:center;" data-aos="fade-up">
+        <i class="fa fa-info-circle me-1" style="color:var(--color-accent);"></i>
+        *Platinum part-time work requires prior approval; minimum RM 10,000/month salary. Requirements are subject to
+        official Government of Malaysia guidelines and may be updated.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FULL FINANCIAL REQUIREMENTS TABLE ── -->
+  <section id="financial" class="section-pad bg-white">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7" data-aos="fade-up">
+          <span class="section-label">Financial requirements</span>
+          <h2 class="section-title">MM2H Financial<br /><span>Requirements At a Glance</span></h2>
+          <div class="section-divider center"></div>
+        </div>
+      </div>
+      <div data-aos="fade-up">
+        <div class="info-table">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th><span class="tier-badge tier-silver"><span class="tier-dot dot-silver"></span>Silver (Under
+                    35)</span></th>
+                <th><span class="tier-badge tier-gold"><span class="tier-dot dot-gold"></span>Gold (35–49)</span></th>
+                <th><span class="tier-badge tier-plat"><span class="tier-dot dot-plat"></span>Platinum (50+)</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Minimum Liquid Assets</strong></td>
+                <td class="highlight-val">RM 500,000</td>
+                <td class="highlight-val">RM 750,000</td>
+                <td class="highlight-val">RM 1,000,000</td>
+              </tr>
+              <tr>
+                <td><strong>Fixed Deposit (Malaysia bank)</strong></td>
+                <td class="highlight-val">RM 150,000</td>
+                <td class="highlight-val">RM 250,000</td>
+                <td class="highlight-val">RM 150,000</td>
+              </tr>
+              <tr>
+                <td><strong>Offshore Monthly Income</strong></td>
+                <td>RM 40,000</td>
+                <td>RM 40,000</td>
+                <td>RM 40,000</td>
+              </tr>
+              <tr>
+                <td><strong>FD Withdrawal Allowed</strong></td>
+                <td>After 1 year (up to 50% for approved uses)</td>
+                <td>After 1 year (up to 50% for approved uses)</td>
+                <td>After 1 year (up to 50% for approved uses)</td>
+              </tr>
+              <tr>
+                <td><strong>Insurance Required</strong></td>
+                <td>Yes — valid medical & life cover</td>
+                <td>Yes — valid medical & life cover</td>
+                <td>Yes — valid medical & life cover</td>
+              </tr>
+              <tr>
+                <td><strong>Domestic Helper</strong></td>
+                <td>1 permitted</td>
+                <td>1 permitted</td>
+                <td>1 permitted</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FIXED DEPOSIT & OFFSHORE INCOME ── -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <!-- Fixed Deposit -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="section-label">Fixed deposit</span>
+          <h3 class="section-title" style="font-size:1.6rem;">Fixed Deposit<br /><span>Requirements</span></h3>
+          <div class="section-divider"></div>
+          <p class="mb-4">All MM2H applicants are required to place a fixed deposit in an approved Malaysian bank
+            account as part of the approval conditions. This must be completed within a specified period after receiving
+            conditional approval.</p>
+          <div class="info-table mb-3">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Tier</th>
+                  <th>FD Amount</th>
+                  <th>Timing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Silver</strong></td>
+                  <td class="highlight-val">RM 150,000</td>
+                  <td>Within 6 months of approval</td>
+                </tr>
+                <tr>
+                  <td><strong>Gold</strong></td>
+                  <td class="highlight-val">RM 250,000</td>
+                  <td>Within 6 months of approval</td>
+                </tr>
+                <tr>
+                  <td><strong>Platinum</strong></td>
+                  <td class="highlight-val">RM 150,000</td>
+                  <td>Within 6 months of approval</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="check-list">
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Must be placed in an approved Malaysian
+              commercial bank</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Interest earned can be used for living
+              expenses</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Up to 50% withdrawable after year 1 for
+              approved purposes (property, vehicle, education, medical)</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Full amount must be maintained throughout
+              visa validity</li>
+          </ul>
+        </div>
+        <!-- Offshore Income -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <span class="section-label">Offshore income</span>
+          <h3 class="section-title" style="font-size:1.6rem;">Offshore Income<br /><span>Requirements</span></h3>
+          <div class="section-divider"></div>
+          <p class="mb-4">All three MM2H tiers require applicants to demonstrate a minimum monthly offshore income. This
+            income must be sourced from outside Malaysia and documented through official bank statements or income
+            certificates.</p>
+          <div class="info-table mb-3">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Tier</th>
+                  <th>Monthly Income</th>
+                  <th>Annual Equivalent</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Silver</strong></td>
+                  <td class="highlight-val">RM 40,000</td>
+                  <td>RM 480,000+</td>
+                </tr>
+                <tr>
+                  <td><strong>Gold</strong></td>
+                  <td class="highlight-val">RM 40,000</td>
+                  <td>RM 480,000+</td>
+                </tr>
+                <tr>
+                  <td><strong>Platinum</strong></td>
+                  <td class="highlight-val">RM 40,000</td>
+                  <td>RM 480,000+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="check-list">
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Income must originate from outside Malaysia
+            </li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Accepted sources: salary, pension, dividends,
+              rental income, business income</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Must be supported by 3–6 months of bank
+              statements</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Retirees may use pension statements as proof
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VISA VALIDITY & DEPENDANTS ── -->
+  <section class="section-pad bg-white">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Visa Validity -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <span class="section-label">Visa validity</span>
+          <h3 class="section-title" style="font-size:1.6rem;">Malaysia Retirement<br /><span>Visa Duration</span></h3>
+          <div class="section-divider"></div>
+          <div class="row g-3 mb-4">
+            <div class="col-6">
+              <div class="info-card" style="text-align:center;">
+                <div class="ic-icon"><i class="fa fa-clock"></i></div>
+                <div class="ic-value">5 Years</div>
+                <div class="ic-label">Initial validity</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="info-card" style="text-align:center;">
+                <div class="ic-icon"><i class="fa fa-sync-alt"></i></div>
+                <div class="ic-value">Renewable</div>
+                <div class="ic-label">Subject to compliance</div>
+              </div>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Multiple-entry social visit pass — travel
+              freely</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Renewal requires continued compliance with FD
+              and insurance</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>No minimum number of days required to spend
+              in Malaysia</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>MM2H does not lead directly to PR or
+              citizenship</li>
+            <li><span class="check-icon"><i class="fa fa-check"></i></span>Pass can be cancelled if conditions are
+              breached</li>
+          </ul>
+        </div>
+        <!-- Dependants -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <span class="section-label">Dependants</span>
+          <h3 class="section-title" style="font-size:1.6rem;">Bringing Your<br /><span>Family to Malaysia</span></h3>
+          <div class="section-divider"></div>
+          <p class="mb-4">MM2H allows the main applicant to include eligible family members under the same pass, making
+            it one of the most family-friendly long-term residency options in Southeast Asia.</p>
+          <div class="info-table">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Dependant Type</th>
+                  <th>Eligibility</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Spouse</strong></td>
+                  <td><i class="fa fa-check-circle" style="color:#22c55e;"></i> Eligible</td>
+                  <td>Marriage certificate required</td>
+                </tr>
+                <tr>
+                  <td><strong>Children</strong></td>
+                  <td><i class="fa fa-check-circle" style="color:#22c55e;"></i> Eligible</td>
+                  <td>Up to age 34; unmarried</td>
+                </tr>
+                <tr>
+                  <td><strong>Stepchildren</strong></td>
+                  <td><i class="fa fa-check-circle" style="color:#22c55e;"></i> Eligible</td>
+                  <td>Legal documentation needed</td>
+                </tr>
+                <tr>
+                  <td><strong>Domestic Helper</strong></td>
+                  <td><i class="fa fa-check-circle" style="color:#22c55e;"></i> 1 permitted</td>
+                  <td>Subject to approval</td>
+                </tr>
+                <tr>
+                  <td><strong>Parents</strong></td>
+                  <td><i class="fa fa-times-circle" style="color:#ef4444;"></i> Not included</td>
+                  <td>Separate visa required</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROPERTY PURCHASE ELIGIBILITY ── -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-6" data-aos="fade-up">
+          <span class="section-label">Property ownership</span>
+          <h2 class="section-title">Property Purchase<br /><span>Eligibility for MM2H Holders</span></h2>
+          <div class="section-divider center"></div>
+        </div>
+      </div>
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="info-table">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Property Detail</th>
+                  <th>MM2H Holder Rules</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Minimum purchase price</strong></td>
+                  <td>RM 1,000,000 (varies by state)</td>
+                </tr>
+                <tr>
+                  <td><strong>Property type</strong></td>
+                  <td>Residential, commercial permitted</td>
+                </tr>
+                <tr>
+                  <td><strong>Freehold / Leasehold</strong></td>
+                  <td>Both permitted (subject to state law)</td>
+                </tr>
+                <tr>
+                  <td><strong>Bumiputera reserved lots</strong></td>
+                  <td>Not permitted for foreign buyers</td>
+                </tr>
+                <tr>
+                  <td><strong>Loan eligibility</strong></td>
+                  <td>Malaysian bank financing available (LTV up to 70%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Stamp duty</strong></td>
+                  <td>Standard foreign buyer rates apply</td>
+                </tr>
+                <tr>
+                  <td><strong>Rental income</strong></td>
+                  <td>Permitted; subject to tax regulations</td>
+                </tr>
+                <tr>
+                  <td><strong>Sales / resale</strong></td>
+                  <td>No restriction; standard procedures apply</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-5" data-aos="fade-left">
+          <div style="background:var(--color-primary);border-radius:var(--radius-lg);padding:32px 28px;">
+            <h5
+              style="color:var(--color-accent);font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;margin-bottom:16px;">
+              Popular Property Locations</h5>
+            <div class="mini-step" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+              <div class="mini-num">KL</div>
+              <div>
+                <h6 style="color:#fff;">Kuala Lumpur</h6>
+                <p style="color:rgba(255,255,255,0.6);">KLCC, Mont Kiara, Bangsar</p>
+              </div>
+            </div>
+            <div class="mini-step" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+              <div class="mini-num">PG</div>
+              <div>
+                <h6 style="color:#fff;">Penang</h6>
+                <p style="color:rgba(255,255,255,0.6);">George Town, Batu Ferringhi</p>
+              </div>
+            </div>
+            <div class="mini-step" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+              <div class="mini-num">JB</div>
+              <div>
+                <h6 style="color:#fff;">Johor Bahru</h6>
+                <p style="color:rgba(255,255,255,0.6);">Iskandar Malaysia luxury zones</p>
+              </div>
+            </div>
+            <div class="mini-step" style="border-bottom:none;">
+              <div class="mini-num">LK</div>
+              <div>
+                <h6 style="color:#fff;">Langkawi</h6>
+                <p style="color:rgba(255,255,255,0.6);">Island lifestyle, duty-free zone</p>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-gold w-100 mt-4" style="justify-content:center;"><i
+                class="fa fa-home me-1"></i> Property Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BENEFITS GRID ── -->
+  <section id="benefits" class="section-pad bg-white">
     <div class="container">
       <div class="row justify-content-center text-center mb-5">
         <div class="col-lg-6" data-aos="fade-up">
           <span class="section-label">Advantages</span>
-          <h2 class="section-title">Benefits of<br /><span>MM2H Programme</span></h2>
+          <h2 class="section-title">Benefits of the<br /><span>MM2H Programme</span></h2>
           <div class="section-divider center"></div>
-          <p class="section-desc mx-auto">The MM2H Programme offers numerous advantages that make Malaysia an ideal
-            choice for long-term residence.</p>
         </div>
       </div>
       <div class="row g-4">
@@ -103,322 +834,158 @@
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-passport"></i></div>
             <h5>Long-Term Stay</h5>
-            <p>Renewable multiple-entry social visit pass for extended stay in Malaysia</p>
+            <p>Renewable 5-year multiple-entry social visit pass</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="60">
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-plane"></i></div>
-            <h5>Multiple-Entry Visa</h5>
-            <p>Freedom to travel in and out of Malaysia with multiple re-entries</p>
+            <h5>Multiple-Entry</h5>
+            <p>Travel freely in and out of Malaysia without restriction</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-users"></i></div>
             <h5>Family Inclusion</h5>
-            <p>Bring your spouse and dependents under the same application</p>
+            <p>Spouse, children and one domestic helper permitted</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-hospital-alt"></i></div>
             <h5>Healthcare Access</h5>
-            <p>World-class international healthcare facilities at affordable costs</p>
+            <p>World-class international hospitals at affordable rates</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-graduation-cap"></i></div>
-            <h5>Education</h5>
-            <p>International school placements and globally recognized universities</p>
+            <h5>International Schools</h5>
+            <p>130+ international schools with global curricula</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="60">
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-home"></i></div>
             <h5>Property Ownership</h5>
-            <p>Property purchase opportunities subject to state regulations</p>
+            <p>Purchase residential and commercial property</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
           <div class="mm2h-benefit-card">
             <div class="bc-icon"><i class="fa fa-briefcase"></i></div>
-            <h5>Business &amp; Investment</h5>
-            <p>Access to Malaysia's thriving economy and ASEAN market</p>
+            <h5>Business Access</h5>
+            <p>Gateway to ASEAN's 680 million consumer economy</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
           <div class="mm2h-benefit-card">
-            <div class="bc-icon"><i class="fa fa-globe-asia"></i></div>
-            <h5>Strategic Location</h5>
-            <p>Gateway to Southeast Asia's booming trade and investment corridors</p>
+            <div class="bc-icon"><i class="fa fa-wallet"></i></div>
+            <h5>Affordable Living</h5>
+            <p>High quality of life at significantly lower costs</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ELIGIBILITY -->
-  <section id="eligibility" class="section-pad bg-white">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-lg-6" data-aos="fade-up">
-          <span class="section-label">Who Can Apply</span>
-          <h2 class="section-title">Eligibility<br /><span>Overview</span></h2>
-          <div class="section-divider center"></div>
-          <p class="section-desc mx-auto">The MM2H Programme is open to eligible foreign nationals who meet the
-            financial and documentation requirements set by the Malaysian Government.</p>
-        </div>
-      </div>
-      <div class="row g-4 align-items-start">
-        <div class="col-lg-7" data-aos="fade-right">
-          <div class="eligibility-table">
-            <table class="table table-hover mb-0">
-              <thead>
-                <tr>
-                  <th>Category</th>
-                  <th>Financial Requirement</th>
-                  <th>Fixed Deposit</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Silver</strong> (Below 35 yrs)</td>
-                  <td>RM 500,000</td>
-                  <td>RM 150,000</td>
-                </tr>
-                <tr>
-                  <td><strong>Gold</strong> (35–49 yrs)</td>
-                  <td>RM 750,000</td>
-                  <td>RM 250,000</td>
-                </tr>
-                <tr>
-                  <td><strong>Platinum</strong> (50+ yrs)</td>
-                  <td>RM 1,000,000</td>
-                  <td>RM 150,000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p style="font-size:0.78rem;color:var(--light-text);margin-top:12px;"><i class="fa fa-info-circle me-1"
-              style="color:var(--color-accent);"></i>Requirements are indicative and subject to official Malaysian
-            Government guidelines. Contact us for current details.</p>
-        </div>
-        <div class="col-lg-5" data-aos="fade-left">
-          <h4 class="section-title" style="font-size:1.3rem;margin-bottom:6px;">Who Should Apply?</h4>
-          <div class="section-divider" style="margin-bottom:20px;"></div>
-          <div class="requirement-item">
-            <div class="req-icon"><i class="fa fa-check-circle"></i></div>
-            <div class="req-text">
-              <h6>Retirees &amp; Senior Citizens</h6>
-              <p>Seeking a peaceful, affordable tropical retirement destination.</p>
-            </div>
-          </div>
-          <div class="requirement-item">
-            <div class="req-icon"><i class="fa fa-check-circle"></i></div>
-            <div class="req-text">
-              <h6>Investors &amp; HNWIs</h6>
-              <p>Looking for strategic ASEAN investment base with excellent returns.</p>
-            </div>
-          </div>
-          <div class="requirement-item">
-            <div class="req-icon"><i class="fa fa-check-circle"></i></div>
-            <div class="req-text">
-              <h6>International Families</h6>
-              <p>Seeking quality education and safe multicultural environment.</p>
-            </div>
-          </div>
-          <div class="requirement-item">
-            <div class="req-icon"><i class="fa fa-check-circle"></i></div>
-            <div class="req-text">
-              <h6>Digital Entrepreneurs</h6>
-              <p>Remote workers seeking low-cost, well-connected Asian hub.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REQUIREMENTS -->
-  <section id="requirements" class="section-pad bg-cream">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-lg-6" data-aos="fade-up">
-          <span class="section-label">Documentation</span>
-          <h2 class="section-title">Application<br /><span>Requirements</span></h2>
-          <div class="section-divider center"></div>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-          <div class="requirement-item" style="flex-direction:column;align-items:flex-start;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;">
-              <div class="req-icon"><i class="fa fa-id-card"></i></div>
-              <h6 style="margin:0;">Valid Passport</h6>
-            </div>
-            <p style="font-size:0.85rem;color:var(--light-text);margin:0;">Valid passport with minimum validity; copies
-              of all passport pages</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
-          <div class="requirement-item" style="flex-direction:column;align-items:flex-start;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;">
-              <div class="req-icon"><i class="fa fa-money-check-alt"></i></div>
-              <h6 style="margin:0;">Financial Documents</h6>
-            </div>
-            <p style="font-size:0.85rem;color:var(--light-text);margin:0;">Bank statements, fixed deposit proof, and
-              financial capability evidence</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-          <div class="requirement-item" style="flex-direction:column;align-items:flex-start;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;">
-              <div class="req-icon"><i class="fa fa-heartbeat"></i></div>
-              <h6 style="margin:0;">Medical Certificate</h6>
-            </div>
-            <p style="font-size:0.85rem;color:var(--light-text);margin:0;">Recent medical examination certificate from
-              recognized physician</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="180">
-          <div class="requirement-item" style="flex-direction:column;align-items:flex-start;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;">
-              <div class="req-icon"><i class="fa fa-shield-alt"></i></div>
-              <h6 style="margin:0;">Insurance Coverage</h6>
-            </div>
-            <p style="font-size:0.85rem;color:var(--light-text);margin:0;">Valid medical and life insurance coverage for
-              Malaysia</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
-          <div class="requirement-item" style="flex-direction:column;align-items:flex-start;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;">
-              <div class="req-icon"><i class="fa fa-file-alt"></i></div>
-              <h6 style="margin:0;">Personal Statement</h6>
-            </div>
-            <p style="font-size:0.85rem;color:var(--light-text);margin:0;">Written declaration of intention and
-              background information</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="requirement-item" style="flex-direction:column;align-items:flex-start;">
-            <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px;">
-              <div class="req-icon"><i class="fa fa-users"></i></div>
-              <h6 style="margin:0;">Family Documents</h6>
-            </div>
-            <p style="font-size:0.85rem;color:var(--light-text);margin:0;">Marriage and birth certificates for
-              dependents (if applicable)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MM2H LIFESTYLE -->
+  <!-- ── HOW MM2H WORKS (MINI PROCESS) ── -->
   <section class="section-pad mm2h-overview-section">
     <div class="container" style="position:relative;z-index:2;">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-lg-7" data-aos="fade-up">
-          <span class="section-label">Life in Malaysia</span>
-          <h2 class="section-title" style="color:#ffffff;">Lifestyle <span>Advantages</span></h2>
-          <div class="section-divider center"></div>
-          <p style="color:rgba(255,255,255,0.7);font-size:0.95rem;">Experience an extraordinary quality of life in
-            Malaysia — a nation that combines the best of tradition and modernity.</p>
+      <div class="row align-items-start g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <span class="section-label">Step-by-step guide</span>
+          <h2 class="section-title">How MM2H<br /><em>Works</em></h2>
+          <div class="section-divider"></div>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:30px;font-size:0.95rem;line-height:1.85;">From your first
+            enquiry to arriving in Malaysia, our team manages every stage of the MM2H process with precision and care.
+          </p>
+          <a href="process.html" class="btn-gold"><i class="fa fa-list-ol me-1"></i> View Full Process</a>
         </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
-          <div style="text-align:center;padding:30px 20px;">
-            <div
-              style="width:56px;height:56px;background:rgba(212,175,55,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <i class="fa fa-wallet" style="color:var(--color-accent);font-size:1.3rem;"></i></div>
-            <h5
-              style="color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">
-              Cost Efficiency</h5>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.83rem;">Live luxuriously for a fraction of Western country
-              costs</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="60">
-          <div style="text-align:center;padding:30px 20px;">
-            <div
-              style="width:56px;height:56px;background:rgba(212,175,55,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <i class="fa fa-sun" style="color:var(--color-accent);font-size:1.3rem;"></i></div>
-            <h5
-              style="color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">
-              Year-Round Summer</h5>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.83rem;">Tropical climate with warmth throughout the year
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="120">
-          <div style="text-align:center;padding:30px 20px;">
-            <div
-              style="width:56px;height:56px;background:rgba(212,175,55,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <i class="fa fa-utensils" style="color:var(--color-accent);font-size:1.3rem;"></i></div>
-            <h5
-              style="color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">
-              Food Paradise</h5>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.83rem;">World-famous multicultural cuisine and vibrant
-              food scene</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
-          <div style="text-align:center;padding:30px 20px;">
-            <div
-              style="width:56px;height:56px;background:rgba(212,175,55,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <i class="fa fa-wifi" style="color:var(--color-accent);font-size:1.3rem;"></i></div>
-            <h5
-              style="color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">
-              Digital Connectivity</h5>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.83rem;">High-speed internet and excellent tech
-              infrastructure</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="60">
-          <div style="text-align:center;padding:30px 20px;">
-            <div
-              style="width:56px;height:56px;background:rgba(212,175,55,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <i class="fa fa-tree" style="color:var(--color-accent);font-size:1.3rem;"></i></div>
-            <h5
-              style="color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">
-              Natural Beauty</h5>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.83rem;">Stunning beaches, rainforests, and highland
-              retreats</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="120">
-          <div style="text-align:center;padding:30px 20px;">
-            <div
-              style="width:56px;height:56px;background:rgba(212,175,55,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <i class="fa fa-plane" style="color:var(--color-accent);font-size:1.3rem;"></i></div>
-            <h5
-              style="color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:8px;">
-              Travel Hub</h5>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.83rem;">Excellent international flight connections across
-              Asia</p>
+        <div class="col-lg-7" data-aos="fade-left">
+          <div
+            style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:28px;">
+            <div class="mini-step">
+              <div class="mini-num">1</div>
+              <div>
+                <h6 style="color:#fff;">Free Consultation</h6>
+                <p style="color:rgba(255,255,255,0.6);">Assess your profile, goals and eligibility in a no-obligation
+                  session</p>
+              </div>
+            </div>
+            <div class="mini-step">
+              <div class="mini-num">2</div>
+              <div>
+                <h6 style="color:#fff;">Eligibility Assessment</h6>
+                <p style="color:rgba(255,255,255,0.6);">Determine the right tier and confirm documentation requirements
+                </p>
+              </div>
+            </div>
+            <div class="mini-step">
+              <div class="mini-num">3</div>
+              <div>
+                <h6 style="color:#fff;">Document Preparation</h6>
+                <p style="color:rgba(255,255,255,0.6);">Collect, verify and organize all required supporting documents
+                </p>
+              </div>
+            </div>
+            <div class="mini-step">
+              <div class="mini-num">4</div>
+              <div>
+                <h6 style="color:#fff;">Submission to Authorities</h6>
+                <p style="color:rgba(255,255,255,0.6);">Official application filed with MOTAC on your behalf</p>
+              </div>
+            </div>
+            <div class="mini-step">
+              <div class="mini-num">5</div>
+              <div>
+                <h6 style="color:#fff;">Approval Letter</h6>
+                <p style="color:rgba(255,255,255,0.6);">Receive conditional approval and prepare for next steps</p>
+              </div>
+            </div>
+            <div class="mini-step">
+              <div class="mini-num">6</div>
+              <div>
+                <h6 style="color:#fff;">Fixed Deposit Setup</h6>
+                <p style="color:rgba(255,255,255,0.6);">Open a Malaysian bank account and place the required FD</p>
+              </div>
+            </div>
+            <div class="mini-step">
+              <div class="mini-num">7</div>
+              <div>
+                <h6 style="color:#fff;">Visa Endorsement</h6>
+                <p style="color:rgba(255,255,255,0.6);">Visit the Immigration Department for final visa stamp</p>
+              </div>
+            </div>
+            <div class="mini-step" style="border-bottom:none;">
+              <div class="mini-num">8</div>
+              <div>
+                <h6 style="color:#fff;">Relocation to Malaysia</h6>
+                <p style="color:rgba(255,255,255,0.6);">Settle in — we support housing, schools, banking and more</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ── CTA ── -->
   <section class="section-pad cta-banner">
     <div class="container" style="position:relative;z-index:2;">
       <div class="row align-items-center">
         <div class="col-lg-7" data-aos="fade-right">
-          <h2 class="cta-banner-title">Ready to Apply for<br /><em>MM2H?</em></h2>
-          <p class="cta-banner-desc">Let our experts guide you through the complete application process with confidence
-            and ease.</p>
+          <h2 class="cta-banner-title">Ready to Begin Your<br /><em>MM2H Application?</em></h2>
+          <p class="cta-banner-desc">Our specialists are ready to assess your eligibility and guide you through every
+            step.</p>
         </div>
         <div class="col-lg-5 text-lg-end mt-4 mt-lg-0" data-aos="fade-left">
           <div class="d-flex gap-3 justify-content-lg-end flex-wrap">
-            <a href="contact.html" class="btn-gold"><i class="fa fa-file-alt me-1"></i> Apply for MM2H</a>
-            <a href="contact.html" class="btn-outline-custom"><i class="fa fa-calendar-check me-1"></i> Book
-              Consultation</a>
+            <a href="contact.html" class="btn-gold"><i class="fa fa-clipboard-check me-1"></i> Check My MM2H
+              Eligibility</a>
+            <a href="contact.html" class="btn-outline-custom"><i class="fa fa-headset me-1"></i> Speak to an MM2H
+              Advisor</a>
           </div>
         </div>
       </div>
@@ -451,8 +1018,8 @@
           <h5 class="footer-title">MM2H Info</h5>
           <ul class="footer-links">
             <li><a href="mm2h.html#benefits">Benefits</a></li>
-            <li><a href="mm2h.html#eligibility">Eligibility</a></li>
-            <li><a href="mm2h.html#requirements">Requirements</a></li>
+            <li><a href="mm2h.html#eligibility">Age Categories</a></li>
+            <li><a href="mm2h.html#financial">Financial Requirements</a></li>
             <li><a href="process.html">How to Apply</a></li>
             <li><a href="faq.html">FAQs</a></li>
           </ul>
@@ -486,7 +1053,8 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/60XXXXXXXXX" class="float-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/60XXXXXXXXX" class="float-whatsapp" target="_blank" title="WhatsApp an Expert"><i
+      class="fab fa-whatsapp"></i></a>
   <div id="scrollTop"><i class="fa fa-chevron-up"></i></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
